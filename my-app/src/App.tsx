@@ -5,10 +5,10 @@ import './App.css';
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-       <Chessboard />
-      </header>
-    </div>
+    <header className="App-header">
+     <Chessboard />
+    </header>
+  </div>
   );
 }
 
