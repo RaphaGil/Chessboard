@@ -8,9 +8,9 @@ const Chessboard = () => {
 
   const files = ["a", "b", "c", "d", "e", "f", "g", "h"];
 
-  for (let row = 0; row < 8; row++) {
+  for (let row = 7; row >= 0; row--) {
     for (let col = 0; col < 8; col++) {
-      const coord = `${files[col]}${row}`;
+      const coord = `${files[col]}${row+1}`;
       const Dark = (row + col) % 2 === 1;
       const isSelected = selected === coord;
       const isHovered = hovered === coord;
