@@ -2,6 +2,7 @@ import React, { useState } from "react";
 
 const Chessboard = () => {
   const [selected, setSelected] = useState<string | null>(null);
+  const [hovered, setHovered] = useState<string | null>(null);
 
   const board = [];
 
@@ -12,6 +13,8 @@ const Chessboard = () => {
       const coord = `${files[col]}${row}`;
       const Dark = (row + col) % 2 === 1;
       const isSelected = selected === coord;
+      const isHovered = hovered === coord;
+      const showText = isSelected || isHovered;
 
       board.push(
         <div
@@ -20,12 +23,13 @@ const Chessboard = () => {
             setSelected(coord);
             console.log(coord);
           }}
+          onMouseEnter={() => setHovered(coord)}
           className={`w-10 h-10 font-light text-sm ${
             Dark ? "bg-yellow-500 text-black" : "bg-gray-800 text-white"
           }
        ${isSelected ? "border-4 border-white " : ""}`}
         >
-          {coord}
+          {showText && coord}
         </div>
       );
     }
