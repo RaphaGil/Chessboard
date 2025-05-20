@@ -20,12 +20,12 @@ const Chessboard = () => {
             setSelected(coord);
             console.log(coord);
           }}
-          className={`w-10 h-10 ${
+          className={`w-10 h-10 font-light text-sm ${
             Dark ? "bg-yellow-500 text-black" : "bg-gray-800 text-white"
           }
        ${isSelected ? "border-4 border-white " : ""}`}
         >
-          <div>{coord}</div>
+          {coord}
         </div>
       );
     }
